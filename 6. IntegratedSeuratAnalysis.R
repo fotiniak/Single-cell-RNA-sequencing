@@ -7,8 +7,8 @@ IntegratedSeuratAnalysis <- function(seurat_filtered,
                                      npcs_clustering) {
   
   require(Seurat)
+  require(scran)
   require(dplyr)
-  require()
   
   
   if (!is.list(seurat_filtered)) {
@@ -20,7 +20,7 @@ IntegratedSeuratAnalysis <- function(seurat_filtered,
   
   select <- dplyr::select
   
-  load("C:/Users/Fotini/Documents/Meduoa_research/scrna_seq/data/cycle.rda")#load cell cycle genes must be loaded within the package
+  #load("C:/Users/Fotini/Documents/Meduoa_research/scrna_seq/data/cycle.rda")#cell cycle genes must be loaded from a file
   
   
   for (seurat in 1:length(seurat_filtered)) {
@@ -37,9 +37,9 @@ IntegratedSeuratAnalysis <- function(seurat_filtered,
       
       seurat_filtered[[seurat]] <- Seurat::NormalizeData(seurat_filtered[[seurat]])#, assay = NULL, normalization.method = "LogNormalize", scale.factor = 10000, margin = 1, verbose = F)
       
-      message("Cell Cycle Scoring...")
+      #message("Cell Cycle Scoring...")
       
-      seurat_filtered[[seurat]] <- Seurat::CellCycleScoring(seurat_filtered[[seurat]], g2m.features=g2m_genes, s.features=s_genes)
+      #seurat_filtered[[seurat]] <- Seurat::CellCycleScoring(seurat_filtered[[seurat]], g2m.features=g2m_genes, s.features=s_genes)
       
       message("Finding Variable Genes...")
       
