@@ -10,6 +10,9 @@ DifferentiallyExpressedGenes <- function(seurat_analyzed, #list of Seurat object
   
   require(Seurat)
   require(scran)
+  require(dplyr)
+  
+  select <- dplyr::select
   
   if (!is.list(seurat_analyzed)) {
     
