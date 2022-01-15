@@ -1,8 +1,9 @@
-
 # MergeSeurat ----
 ## Merge all of the seurat objects in a list
 
 MergeSeurat <- function(seurat_list) {
+
+  require(Seurat)
   
   print(seurat_list)
   

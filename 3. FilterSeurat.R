@@ -6,6 +6,9 @@ FilterSeurat <- function(seurat_merged,
                          max_genes = 2500, 
                          max_mito_genes = 15, 
                          min_non_zero_cells_per_gene = 10) {
+						 
+  require(Seurat)
+  require(dplyr)
   
   # filter cells
   
