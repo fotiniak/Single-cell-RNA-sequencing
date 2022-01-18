@@ -25,8 +25,6 @@ SeparateSeuratAnalysis <- function(seurat_filtered,
       
       set.seed(1993)
       
-      print("\n\n\n")
-      
       print("Analysis of sample: ")
       
       print(seurat_filtered[[seurat]]$orig.ident[[1]])
