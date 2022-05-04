@@ -5,7 +5,7 @@
 ## The output of this function is a list of lists with the results for each Seurat object.
 
 DifferentiallyExpressedGenes <- function(seurat_analyzed, #list of Seurat objects or single Seurat object
-                                         clustering = "RNA_snn_res.0.4"){ #the clustering ident to use for the de analysis
+                                         clustering){ #the clustering ident to use for the de analysis
   
   
   require(Seurat)
@@ -47,7 +47,7 @@ DifferentiallyExpressedGenes <- function(seurat_analyzed, #list of Seurat object
       DefaultAssay(de_analysis_results[[seurat]]$seurat_object) <- "RNA"
       
       de_analysis_results[[seurat]][["clustering_markers"]] <- FindAllMarkers(de_analysis_results[[seurat]]$seurat_object,
-                                                                              assay = assay,
+                                                                              assay = "RNA",
                                                                               only.pos = T,
                                                                               min.pct = 0.2,
                                                                               logfc.threshold = 0.5,
