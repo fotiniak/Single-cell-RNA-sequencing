@@ -77,8 +77,6 @@ PrintPlots <- function(de_analysis_results,
       print(featureplots)
       
       dev.off()
-      dev.off()
-      dev.off()
       
       write.xlsx(de_analysis_results[[seurat]][["clustering_markers"]], file = paste0(out_path, "/", de_analysis_results[[seurat]]$seurat_object$orig.ident[1], "_clustering_markers.xlsx"))
       
